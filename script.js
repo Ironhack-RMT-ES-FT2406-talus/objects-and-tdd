@@ -118,3 +118,72 @@ for (let nombreDePropiedad in headPhones) {
   // console.log(`property: ${nombreDePropiedad} is ${headPhones[nombreDePropiedad]}`)
 
 }
+
+
+
+// ESTRUCTURA DE DATA
+
+const users = [
+
+  {
+    username: "Iñigo",
+    bitcoin: 2,
+    hasNFTs: false, 
+  },
+  {
+    username: "Germán",
+    bitcoin: 0,
+    hasNFTs: false, 
+  },
+  {
+    username: "Marcos",
+    bitcoin: 0,
+    hasNFTs: false, 
+  },
+  {
+    username: "Sheyla",
+    bitcoin: 5,
+    hasNFTs: false, 
+  },
+
+]
+
+// como imprimo la cantidad de bitcoins del primer usuario
+console.log( users[0].bitcoin )
+
+// el tercer elemento del array quiero cambiar que si tiene NFTs
+users[2].hasNFTs = true;
+
+// quiero agregar un nuevo bitcoin al ultimo usuario del array
+// users[users.length - 1].bitcoin = users[users.length - 1].bitcoin + 1
+// users[users.length - 1].bitcoin += 1
+users[users.length - 1].bitcoin++
+
+// añadir un nuevo usuario al array
+users.push( {
+  username: "Michelle",
+  bitcoin: 7,
+  hasNFTs: true
+} )
+
+console.log(users)
+
+
+// crear una funcion que nos indique si un usuario utiliza cripto
+// si el usuario tiene bitcoins o tiene NFTs => Si el usuario usa cripto
+// si no, Este usuario no cree en cripto
+
+function userDoesCrypto(oneUser) {
+  // console.log(oneUser)
+  if (oneUser.bitcoin > 0 || oneUser.hasNFTs === true) {
+    return `Si, el usuario ${oneUser.username} usa cripto!`
+  } else {
+    return `No, el usuario ${oneUser.username} no cree en crypto`
+  }
+}
+
+// console.log( userDoesCrypto(users[1]) )
+
+for (let i = 0; i < users.length; i++) {
+  console.log( userDoesCrypto(users[i]) )
+}
